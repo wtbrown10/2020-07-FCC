@@ -6,9 +6,7 @@ function largestOfFour(arr) {
     let numberCheck = 0
 
     for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < 1; j++) {
-            newArray.push(Math.max(...arr[i]))
-        }
+        newArray.push(Math.max(...arr[i]))
     }
     console.log(newArray)
     // return arr;
