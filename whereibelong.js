@@ -4,18 +4,22 @@ function getIndexToIns(arr, num) {
     let numberWeNeed = 0
 
     for (let i = 0; i < array.length; i++) {
-        if (num >= array[i]) {
+        if (num === array[i]) {
+            console.log(array[i], '.')
+            numberWeNeed = array.indexOf(array[i])
+            i = array.length
+        } else if (num > Math.max(...array)) {
+            numberWeNeed = array.indexOf(Math.max(...array)) + 1
+        } else if (num < array[i]) {
             number = array[i]
-            console.log(number)
+            numberWeNeed = array.indexOf(array[i])
+            i = array.length
         }
-        numberWeNeed = array.indexOf(array[i])
+        console.log(numberWeNeed, "..")
     }
 
-
-    console.log(numberWeNeed)
-
-
-    // return num;
+    console.log(number)
+    return numberWeNeed
 }
 
-console.log(getIndexToIns([40, 60], 50));
+console.log(getIndexToIns([10, 20, 30, 40, 50], 55))
