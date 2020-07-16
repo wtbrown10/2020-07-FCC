@@ -1,20 +1,15 @@
 function destroyer(arr) {
-    console.log(arguments)
-    console.log(Object.keys(arguments))
+    let args = Array.prototype.slice.call(arguments);
 
-    let array = Object.keys(arguments)
-    console.log(array)
-
-    arr.filter(num => !arr.includes(array.join()))
-
-    //  for (let i = 1; i < Object.keys(arguments).length; i++) {
-    //    if(arr.includes(array.join())) {
-    //      arr.splice(arr.indexOf(Objects.keys(arguments)[i]))
-    //    }
-    //  }
-
-    console.log(arr);
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < args.length; j++) {
+            if (arr[i] === args[j]) {
+                delete arr[i];
+            }
+        }
+    }
+    return arr.filter(Boolean);
 }
 
 
-destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
