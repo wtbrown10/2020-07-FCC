@@ -1,19 +1,57 @@
 // Intermediate Algorithm Scripting: Wherefore art thou
 
-function whatIsInAName(collection, source) {
-    var arr = [];
-    let objSource = Object.keys(source)
-    console.log(Object.keys(source)[0])
-    // Only change code below this line
 
-    for (let i = 0; i < collection.length; i++) {
-        for (let j = 0; j < ource.length; j++) {
-            if (collection[i]. === source) { }
-        }
+function whatIsInAName(arrayObjectOne, objectTwo) {
+
+    let object2 = objectTwo
+    let object1 = ''
+    let string1 = ''
+    let string2 = ''
+    let finalArray = []
+
+    for (let i = 0; i < arrayObjectOne.length; i++) {
+        object1 = arrayObjectOne[i]
+
+        string2 = JSON.stringify(object2)
+        string2 = string2.substr(1, string2.length - 2)
+        console.log(string2)
+        string1 = JSON.stringify(object1)
+
+        console.log(string1.includes(string2))
+        // if (string1 == string2) {
+
+        //     finalArray.push(object1)
+        // }
     }
+    console.log(finalArray)
 
-    // Only change code above this line
-    return arr;
 }
 
-whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 })
+
+// should return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }]
+
+
+// arnells code
+
+function whatIsInAName(arrayObjectOne, objectTwo) {
+    let object1 = "";
+    let object2 = objectTwo;
+    let string1 = "";
+    let string2 = "";
+    let finalArray = [];
+    for (let i = 0; i < arrayObjectOne.length; i++) {
+        // console.log(arrayObjectOne[i]);
+        object1 = arrayObjectOne[i];
+        string2 = JSON.stringify(object2)
+        string2 = string2.substring(1, string2.length - 1);
+        // console.log(string2);
+        string1 = JSON.stringify(object1);
+        // console.log(typeof(string2));
+        // console.log(typeof(string1));
+        console.log(string2, string1);
+        console.log(string1.includes(string2))
+    }
+}
+whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 });
+// should return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }].
