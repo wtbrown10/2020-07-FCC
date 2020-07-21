@@ -4,7 +4,7 @@ function fearNotLetter(str) {
     let alphaSplit = alphabet.split('')
     let firstLetter = alphabet.indexOf(str[0])
     let lastLetter = str.length + 1
-    console.log(alphabet.indexOf(str[0]))
+
 
     if (alphabet == str) {
         return undefined
