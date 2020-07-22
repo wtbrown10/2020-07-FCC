@@ -21,3 +21,8 @@ function pairElement(str) {
 }
 
 console.log(pairElement("ATCGA"));
+
+
+function findLetter(str) {
+
+}
